@@ -18,8 +18,8 @@ const months = ["January", "February", "March", "April", "May", "June",
 
 
 const timeEntryName = "WorkDaySchedule";
-const firstHour = 8;
-const lastHour = 17;
+const firstHour = 10;
+const lastHour = 23;
 const hourMap = ["12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM",
     "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"];
 
@@ -178,3 +178,4 @@ function saveClick() {
 
     localStorage.setItem(timeEntryName, JSON.stringify(timeEntry));
 }
+
