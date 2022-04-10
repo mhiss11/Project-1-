@@ -1,0 +1,131 @@
+body  {
+    margin: 10px;
+
+}
+
+main {
+    display: flex;
+
+}
+
+section {
+    margin-top: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.search-panel {
+    width: 25%;
+    margin: 10px 20px 0 10px;
+    padding: 10px 0 10px 10px;
+    background-color: rgb(132, 159, 168);
+    border-radius: 10px;
+}
+
+.search-button-panel {
+    margin-left: -52px;
+}
+
+.city-list-box {
+    margin-top: 5px;
+}
+
+.city-name {
+    width: 89%;
+}
+
+.results-panel {
+    width: 75%;
+    padding-bottom: 10px;
+    visibility: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.current-conditions-panel {
+    border: 1px solid black;
+    background-color: rgb(153, 211, 235);
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+
+.name-block,
+.uv-index-block {
+    display: flex;
+    align-items: center;
+}
+
+#uv-index {
+    margin-left: 5px;
+    padding: 5px 10px;
+}
+
+.forecast-panel {
+    padding-top: 50px;
+}
+
+.container {
+    display: inline;
+    border-radius: 10px;
+}
+
+.card-header,
+.card-body {
+    text-align: center;
+}
+
+.card-header {
+    background-color: rgb(153, 211, 235);
+    color: black;
+}
+
+.card-body {
+    background-color: rgb(132, 159, 168);
+}
+
+
+
+.favorable {
+    background-color: green;
+    color: white;
+}
+
+.moderate {
+    background-color: yellow;
+    color: black;
+}
+
+.severe {
+    background-color: red;
+    color: white;
+}
+
+
+/* Viewports Styling*/
+
+@media screen and (max-width: 575px) {
+    .search-panel {
+        width: 40%;
+    }
+
+    .search-button-panel {
+        margin-left: 0px;
+    }
+
+    .search-panel h3 {
+        font-size: 15px;
+    }
+
+    .form-row {
+        display: block;
+        text-align: center;
+    }
+
+    .results-panel {
+        width: 60%;
+    }
+}
