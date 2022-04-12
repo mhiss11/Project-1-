@@ -28,8 +28,8 @@ Web API's
 
 Megan Hiss  
 Mathew Dal Corobbo  
-Inglish Foust 
- Michael Wright
+Inglish Foust  
+Michael Wright
 
 
 
