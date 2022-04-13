@@ -99,11 +99,15 @@ section {
 }
 
 .search-panel {
-  width: 25%;
+  width: 40%;
   margin: 10px 20px 0 10px;
   padding: 10px 0 10px 10px;
   background-color: rgb(132, 159, 168);
   border-radius: 10px;
+}
+
+.search-field {
+  width: 100%;
 }
 
 .search-button-panel {
