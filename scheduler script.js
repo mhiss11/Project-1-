@@ -179,6 +179,11 @@ function saveClick() {
     localStorage.setItem(timeEntryName, JSON.stringify(timeEntry));
 }
 
+
+// WEATHER JS   //
+
+
+
 localStorage.clear();
 
 function findCity() {
