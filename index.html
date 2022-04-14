@@ -28,13 +28,13 @@
     <!--Weather Dashboard-->
 
     <section class="search-panel">
-        <div class="search-box">
-            <h3>Search for a City</h3>
+        <div class="search-box flex">
+            <h3 class="search-header">Search for a City</h3>
             <form>
-                <div class="form-row align-items-center">
-                    <div class="col-3 search-field">
+                <div class="align-items-center">
+                    <div class="search-field">
                         <label class="sr-only" for="cityName">City</label>
-                        <input type="text" class="form-control" id="cityName" placeholder="CITY NAME">
+                        <input type="text" class="city-input" id="cityName" placeholder="City Name">
                     </div>
                     <button type="submit" class="btn btn-primary" id="search-button"><svg width="1em" height="1em"
                             viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
@@ -74,7 +74,7 @@
                 <p class="rounded current-info" id="uv-index"></p>
             </div>
         </div>
-        <div class="forecast-panel">
+        <!-- <div class="forecast-panel">
             <h4>5-Day Forecast:</h4>
             <div class="weather-container">
                 <div class="row">
@@ -145,7 +145,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

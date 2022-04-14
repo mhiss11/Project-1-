@@ -1,7 +1,7 @@
 body {
-  max-width: 600px;
-  max-height: 600px;
-  font-family: 'Comic Sans MS', sans-serif;
+  /* max-width: 600px;
+  max-height: 600px; */
+  font-family: sans-serif;
   font-size: 12px;
   line-height: 1;
   margin: 10px;
@@ -17,14 +17,22 @@ textarea {
   padding: 5px;
 }
 
+input {
+  border-width: 0;
+  border-style: none;
+  outline: none;
+}
+
 .jumbotron {
-  max-width: 600px;
-  max-height: 600px;
+
   text-align: center;
   background-color: transparent;
   color: black;
   border-radius: 0;
   border-bottom: 3px solid black;
+  margin: 0 auto 0 auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .description {
@@ -32,16 +40,12 @@ textarea {
 }
 
 .time-block {
-  max-width: 600px;
-  max-height: 600px;
   text-align: center;
   border-radius: 7px;
 }
 
 .row {
   white-space: pre-wrap;
-  max-width: 600px;
-  max-height: 600px;
   border-top: 1px solid white;
   ;
 }
@@ -53,17 +57,17 @@ textarea {
 }
 
 .past {
-  background-color: #f3eea8;
+  background-color: #d3d3d3;
   color: white;
 }
 
 .present {
-  background-color: #3c48f0;
+  background-color: #ff6961;
   color: white;
 }
 
 .future {
-  background-color: #f023e5;
+  background-color: #77dd77;
   color: white;
 }
 
@@ -80,6 +84,24 @@ textarea {
 .saveBtn i:hover {
   font-size: 8px;
   transition: all .3s ease-in-out;
+}
+
+.container {
+  margin: 0 auto 0 auto;
+}
+
+
+
+
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
 }
 
 /* Weather Style */
@@ -99,27 +121,50 @@ section {
 }
 
 .search-panel {
-  width: 40%;
-  margin: 10px 20px 0 10px;
+  width: 30%;
+  margin: 10px 50px 0 50px;
   padding: 10px 0 10px 10px;
   background-color: rgb(132, 159, 168);
   border-radius: 10px;
 }
 
 .search-field {
-  width: 100%;
+  width: 70%;
+  display: inline;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
 }
 
-.search-button-panel {
-  margin-left: -52px;
+.search-header {
+  width: 100%;
+  text-align: center;
+}
+
+#search-button {
+  margin: 5px 10px 5px 10px;
+  display: inline;
+}
+
+.city-name {
+  width: 70%;
+  margin: 0 auto 0 auto;
+}
+
+.city-input {
+  width: 60%;
+
 }
 
 .city-list-box {
   margin-top: 5px;
-}
-
-.city-name {
-  width: 89%;
 }
 
 .results-panel {
@@ -135,6 +180,8 @@ section {
   border-radius: 10px;
   padding-left: 10px;
   padding-bottom: 30px;
+  margin-left: 50px;
+  width: 40%;
 }
 
 .name-block,
