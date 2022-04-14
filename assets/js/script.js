@@ -27,6 +27,7 @@ const hourMap = ["12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM",
 
 setCurrentDayAndTime();
 TimeBlocks();
+getTimeEntry();
 
 
 
@@ -98,7 +99,7 @@ function TimeBlocks() {
     }
 }
 
-localStorage.setItem(timeEntryName, JSON.stringify(timeEntry));
+//localStorage.setItem(timeEntryName, JSON.stringify(timeEntry));
 
 function saveClick() {
     var hourBlock = $(this).val();
@@ -156,20 +157,7 @@ function saveClick() {
         }
     }
 
-    function getTimeEntry() {
-        var teList = JSON.parse(localStorage.getItem(timeEntryName));
 
-        if (teList) {
-            timeEntry = teList;
-        }
-
-        for (let i = 0; i < timeEntry.length; i++) {
-
-            if (timeEntry[i].day == currentDay) {
-                $("#text" + timeEntry[i].time).val(timeEntry[i].text);
-            }
-        }
-    }
 
     if (!entryFound) {
         timeEntry.splice(newEntryIndex, 0, newEntry);
@@ -179,12 +167,26 @@ function saveClick() {
     localStorage.setItem(timeEntryName, JSON.stringify(timeEntry));
 }
 
+function getTimeEntry() {
+    var teList = JSON.parse(localStorage.getItem(timeEntryName));
+
+    if (teList) {
+        timeEntry = teList;
+    }
+
+    for (let i = 0; i < timeEntry.length; i++) {
+
+        if (timeEntry[i].day == currentDay) {
+            $("#text" + timeEntry[i].time).val(timeEntry[i].text);
+        }
+    }
+}
 
 // WEATHER JS   //
 
 
 
-localStorage.clear();
+//localStorage.clear();
 
 function findCity() {
     var cityName = titleCase($("#cityName")[0].value.trim());
