@@ -318,3 +318,85 @@ $(".city-list-box").on("click", ".city-name", function () {
     getListCity(coordinates);
 })
 
+//Event js
+class EventBrite {
+    constructor() {
+        this.auth_token = 'WKLASWB55JIUWOVX6EZU';
+        this.orderby = "date";
+    }
+
+    async queryAPI(eventName, category) {
+        const eventsResponse = await fetch('https://www.eventbriteapi.com/v3/events/search/?q=${eventName}&sort_by$={this.orderby}&categories=${category}&token=WKLASWB55JIUWOVX6EZU');
+    }
+
+    async getCategoriesAPI() {
+        const categoriesResponse = await fetch('https://www.eventbriteapi.com/v3/categories/?token=WKLASWB55JIUWOVX6EZU')
+
+
+        const categories = await categoriesResponse.json();
+
+        return {
+            categories
+        }
+
+
+    }
+
+
+
+
+
+}
+class UI {
+    constructor() {
+        this.init();
+    }
+    init() {
+        this.printCategories();
+    }
+    printCategories() {
+        const categoriesList = eventbrite.getCategoriesAPI()
+            .then(categories => {
+                const categoriesList = categories.categories.categories;
+                const categoriesSelect = document.querySelector('select#category');
+
+                //inserts catergories
+
+                categoriesList.forEach(category => {
+                    const option = document.createElement('option');
+                    option.value = category.id;
+                    option.appendChild(document.createTextNode(category.name));
+                    categoriesSelect.appendChild(option);
+                })
+
+
+            })
+            .catch(error => console.log(error));
+    }
+
+
+}
+
+const eventbrite = new EventBrite();
+const ui = new UI();
+
+
+document.getElementById('submitBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const eventName = document.getElementById('event-name').value;
+    const catergory = document.getElementById('category').value;
+
+    console.log(eventName + ' : ' + catergory);
+
+    if (eventName !== '') {
+        console.log('Successful')
+        eventbrite.queryAPI(eventName, catergory)
+
+    } else {
+        console.log('Failed')
+
+    }
+
+})
+

@@ -26,127 +26,104 @@
 
 
     <!--Weather Dashboard-->
+    <div class="weather-event-wrapper flex">
+        <div class="">
+            <div class="flex">
+                <section class="search-panel">
+                    <div class="search-box flex">
+                        <h3 class="search-header">Search Weather for a City</h3>
+                        <form>
+                            <div class="align-items-center">
+                                <div class="search-field">
+                                    <label class="sr-only" for="cityName">City</label>
+                                    <input type="text" class="city-input" id="cityName" placeholder="City Name">
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="search-button"><svg width="1em"
+                                        height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                        <path fill-rule="evenodd"
+                                            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                    </div>
+                    <div class="city-list-box">
+                        <ul class="list-group" id="city-list"></ul>
+                    </div>
+                    </form>
+            </div>
+            </section>
 
-    <section class="search-panel">
-        <div class="search-box flex">
-            <h3 class="search-header">Search for a City</h3>
-            <form>
-                <div class="align-items-center">
-                    <div class="search-field">
-                        <label class="sr-only" for="cityName">City</label>
-                        <input type="text" class="city-input" id="cityName" placeholder="City Name">
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="search-button"><svg width="1em" height="1em"
-                            viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                            <path fill-rule="evenodd"
-                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                        </svg>
-                    </button>
-                </div>
-        </div>
-        <div class="city-list-box">
-            <ul class="list-group" id="city-list"></ul>
-        </div>
-        </form>
-        </div>
-    </section>
 
-    <section class="results-panel">
-        <div class="current-conditions-panel">
-            <div class="name-block">
-                <h3 id="city-name"></h3>
-                <img src="" alt="" id="currentIcon">
-            </div>
-            <div>
-                <p class="current-info" id="temperature"></p>
-            </div>
-            <div>
-                <p class="current-info" id="humidity"></p>
-            </div>
-            <div>
-                <p class="current-info" id="wind-speed"></p>
-            </div>
-            <div class="uv-index-block">
-                <p> UV Index: </p>
-                <p class="rounded current-info" id="uv-index"></p>
-            </div>
-        </div>
-        <!-- <div class="forecast-panel">
-            <h4>5-Day Forecast:</h4>
-            <div class="weather-container">
-                <div class="row">
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 id="day-0"></h5>
-                            </div>
-                            <div class="card-body">
-                                <img src="" alt="" id="img-0">
-                                <p class="card-text" id="temp-0"></p>
-                                <p class="card-text" id="hum-0"></p>
-                                <p class="card-text" id="wind-speed-0"></p>
-                            </div>
-                        </div>
+
+            <section class="results-panel">
+                <div class="current-conditions-panel">
+                    <div class="name-block">
+                        <h3 id="city-name"></h3>
+                        <img src="" alt="" id="currentIcon">
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 id="day-1"></h5>
-                            </div>
-                            <div class="card-body">
-                                <img src="" alt="" id="img-1">
-                                <p class="card-text" id="temp-1"></p>
-                                <p class="card-text" id="hum-1"></p>
-                                <p class="card-text" id="wind-speed-1"></p>
-                            </div>
-                        </div>
+                    <div>
+                        <p class="current-info" id="temperature"></p>
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 id="day-2"></h5>
-                            </div>
-                            <div class="card-body">
-                                <img src="" alt="" id="img-2">
-                                <p class="card-text" id="temp-2"></p>
-                                <p class="card-text" id="hum-2"></p>
-                                <p class="card-text" id="wind-speed-2"></p>
-                            </div>
-                        </div>
+                    <div>
+                        <p class="current-info" id="humidity"></p>
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 id="day-3"></h5>
-                            </div>
-                            <div class="card-body">
-                                <img src="" alt="" id="img-3">
-                                <p class="card-text" id="temp-3"></p>
-                                <p class="card-text" id="hum-3"></p>
-                                <p class="card-text" id="wind-speed-3"></p>
-                            </div>
-                        </div>
+                    <div>
+                        <p class="current-info" id="wind-speed"></p>
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 id="day-4"></h5>
-                            </div>
-                            <div class="card-body">
-                                <img src="" alt="" id="img-4">
-                                <p class="card-text" id="temp-4"></p>
-                                <p class="card-text" id="hum-4"></p>
-                                <p class="card-text" id="wind-speed-4"></p>
-                            </div>
-                        </div>
+                    <div class="uv-index-block">
+                        <p> UV Index: </p>
+                        <p class="rounded current-info" id="uv-index"></p>
                     </div>
                 </div>
+            </section>
+        </div>
+
+        <!--Events Section-->
+        <section class="col-6">
+            <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+                <a class="navbar-brand" href="#">Search Events</a>
+            </nav> -->
+            <div class="events-container search-wrapper">
+                <div id="search-events" class="card card-body">
+                    <h1 class="text-center">Search for Events by Name or City</h1>
+
+                    <div class="form-group">
+                        <label for="event-name">Search by Name or City</label>
+                        <input type="text" id="event-name" class="form-control" placeholder="Search By Name or City">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select class="form-control" id="category"></select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="mt-5 form-control btn btn-success" id="submitBtn" value="Search">
+                    </div>
+
+                </div>
+                <div id="result" class="row mt-5"></div>
             </div>
-        </div> -->
-    </section>
+
+            <!-- <footer class="mt-5 p-3 text-center bg-primary">
+                Search Events in Your City &copy;
+            </footer> -->
+
+            <script src="js/eventbrite.js"></script>
+            <script src="js/ui.js"></script>
+            <script src="js/app.js"></script>
+            <style>
+                footer {
+                    color: white;
+                }
+            </style>
+        </section>
+    </div>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

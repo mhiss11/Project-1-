@@ -102,6 +102,7 @@ input {
   align-items: center;
   justify-content: center;
 
+
 }
 
 /* Weather Style */
@@ -121,8 +122,8 @@ section {
 }
 
 .search-panel {
-  width: 30%;
-  margin: 10px 50px 0 50px;
+  width: auto;
+  margin: 15px 50px 0 50px;
   padding: 10px 0 10px 10px;
   background-color: rgb(132, 159, 168);
   border-radius: 10px;
@@ -181,7 +182,7 @@ section {
   padding-left: 10px;
   padding-bottom: 30px;
   margin-left: 50px;
-  width: 40%;
+  width: auto;
 }
 
 .name-block,
