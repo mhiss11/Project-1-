@@ -27,12 +27,15 @@ input {
 
   text-align: center;
   background-color: transparent;
-  color: black;
+  color: white;
   border-radius: 0;
   border-bottom: 3px solid black;
   margin: 0 auto 0 auto;
   padding-bottom: 20px;
   padding-top: 20px;
+  background-image: url("/assets/unsplash1.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .description {
@@ -54,6 +57,10 @@ input {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  border-bottom: 1px dashed #000000;
+  border-left: 1px solid black;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .past {
@@ -62,7 +69,7 @@ input {
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #6193ff;
   color: white;
 }
 
@@ -125,7 +132,7 @@ section {
   width: auto;
   margin: 15px 50px 0 50px;
   padding: 10px 0 10px 10px;
-  background-color: rgb(132, 159, 168);
+  background-color: #6193ff;
   border-radius: 10px;
 }
 
@@ -177,7 +184,7 @@ section {
 
 .current-conditions-panel {
   border: 1px solid black;
-  background-color: rgb(153, 211, 235);
+  background-color: #6193ff;
   border-radius: 10px;
   padding-left: 10px;
   padding-bottom: 30px;
@@ -216,7 +223,7 @@ section {
 }
 
 .card-body {
-  background-color: rgb(132, 159, 168);
+  background-color: #a166a3;
 }
 
 
