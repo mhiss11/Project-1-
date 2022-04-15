@@ -73,24 +73,24 @@ function TimeBlocks() {
     for (let hourBlock = firstHour; hourBlock <= lastHour; hourBlock++) {
 
         var newHtml = '<div class="row time-block"> ' +
-            '<div class="col-md-1 hour">' + hourMap[hourBlock] + '</div> ';
+            '<div class="col m1 hour">' + hourMap[hourBlock] + '</div> ';
 
 
         if (hourBlock < currentTime) {
-            newHtml = newHtml + '<textarea class="col-md-10 description past" id="text' +
+            newHtml = newHtml + '<textarea class="col m10 description past" id="text' +
                 hourMap[hourBlock] + '"></textarea> ';
         }
         else if (hourBlock === currentTime) {
-            newHtml = newHtml + '<textarea class="col-md-10 description present" id="text' +
+            newHtml = newHtml + '<textarea class="col m10 description present" id="text' +
                 hourMap[hourBlock] + '"></textarea> ';
         }
         else {
-            newHtml = newHtml + '<textarea class="col-md-10 description future" id="text' +
+            newHtml = newHtml + '<textarea class="col m10 description future" id="text' +
                 hourMap[hourBlock] + '"></textarea> ';
         };
 
 
-        newHtml = newHtml + '<button class="btn saveBtn col-md-1" value="' + hourMap[hourBlock] + '">' +
+        newHtml = newHtml + '<button class="btn saveBtn col m1" value="' + hourMap[hourBlock] + '">' +
             '<i class="fas fa-save"></i></button> ' +
             '</div>';
 

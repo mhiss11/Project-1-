@@ -10,9 +10,9 @@ body {
 
 textarea {
   background: transparent;
-  border: none;
+  /* border: none; */
   resize: none;
-  color: #000000;
+  color: black;
   border-left: 1px solid black;
   padding: 5px;
 }
@@ -61,21 +61,25 @@ input {
   border-left: 1px solid black;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+  
 }
 
 .past {
   background-color: #d3d3d3;
-  color: white;
+  color: black;
+  font-size: large;
 }
 
 .present {
   background-color: #6193ff;
-  color: white;
+  color: black;
+  font-size: large;
 }
 
 .future {
   background-color: #77dd77;
-  color: white;
+  color: black;
+  font-size: large;
 }
 
 .saveBtn {
@@ -94,7 +98,7 @@ input {
 }
 
 .container {
-  margin: 0 auto 0 auto;
+  /* margin: 0 auto 0 auto; */
 }
 
 
@@ -178,7 +182,7 @@ section {
 .results-panel {
   width: 75%;
   padding-bottom: 10px;
-  visibility: hidden;
+  /* visibility: hidden; */
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -201,6 +205,7 @@ section {
 #uv-index {
   margin-left: 5px;
   padding: 5px 10px;
+  border-radius:25%;
 }
 
 .forecast-panel {
