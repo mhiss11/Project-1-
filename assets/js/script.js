@@ -23,13 +23,14 @@ const lastHour = 23;
 const hourMap = ["12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM",
     "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"];
 
-
+var eventResultsEl = document.getElementById("event-result")
 
 setCurrentDayAndTime();
 TimeBlocks();
 getTimeEntry();
 
-
+var eventNameEl = document.getElementById("event-name")
+var weatherApiKey = '99072ede3746b0b3efde9c724195f6dd';
 
 $(".saveBtn").click(saveClick);
 
@@ -72,25 +73,25 @@ function TimeBlocks() {
 
     for (let hourBlock = firstHour; hourBlock <= lastHour; hourBlock++) {
 
-        var newHtml = '<div class="row time-block"> ' +
-            '<div class="col-md-1 hour">' + hourMap[hourBlock] + '</div> ';
+        var newHtml = '<div class="container columns time-block"> ' +
+            '<div class="column is-one-fifth hour">' + hourMap[hourBlock] + '</div> ';
 
 
         if (hourBlock < currentTime) {
-            newHtml = newHtml + '<textarea class="col-md-10 description past" id="text' +
+            newHtml = newHtml + '<textarea class="column is-four-fifths description past" id="text' +
                 hourMap[hourBlock] + '"></textarea> ';
         }
         else if (hourBlock === currentTime) {
-            newHtml = newHtml + '<textarea class="col-md-10 description present" id="text' +
+            newHtml = newHtml + '<textarea class="column is-four-fifths description present" id="text' +
                 hourMap[hourBlock] + '"></textarea> ';
         }
         else {
-            newHtml = newHtml + '<textarea class="col-md-10 description future" id="text' +
+            newHtml = newHtml + '<textarea class="column is-four-fifths description future" id="text' +
                 hourMap[hourBlock] + '"></textarea> ';
         };
 
 
-        newHtml = newHtml + '<button class="btn saveBtn col-md-1" value="' + hourMap[hourBlock] + '">' +
+        newHtml = newHtml + '<button class="button saveBtn column is-one-fifth" value="' + hourMap[hourBlock] + '">' +
             '<i class="fas fa-save"></i></button> ' +
             '</div>';
 
@@ -198,7 +199,7 @@ function findCity() {
 
                 $("#city-name")[0].textContent = cityName + " (" + moment().format('M/D/YYYY') + ")";
 
-                $("#city-list").append('<button type="button" class="list-group-item list-group-item-light list-group-item-action city-name">' + cityName);
+                $("#city-list").append('<button type="button" class="list-group-item list-group-item-light list-group-item-action city-name button columns">' + cityName);
 
                 const lat = data.coord.lat;
                 const lon = data.coord.lon;
@@ -237,7 +238,7 @@ function getListCity(coordinates) {
 }
 
 function getCurrentWeather(data) {
-    $(".results-panel").addClass("visible");
+    $(".results-panel").removeClass("is-hidden");
 
     $("#currentIcon")[0].src = "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png";
     $("#temperature")[0].textContent = "Temperature: " + data.current.temp.toFixed(1) + " \u2109";
@@ -256,30 +257,10 @@ function getCurrentWeather(data) {
         $("#uv-index").addClass("severe");
     }
 
-    // getFutureWeather(data);
+
 }
 
-// function getFutureWeather(data) {
-//     for (var i = 0; i < 5; i++) {
-//         var futureWeather = {
-//             date: convertUnixTime(data, i),
-//             icon: "http://openweathermap.org/img/wn/" + data.daily[i + 1].weather[0].icon + "@2x.png",
-//             temp: data.daily[i + 1].temp.day.toFixed(1),
-//             humidity: data.daily[i + 1].humidity
-//         }
 
-//         var currentSelector = "#day-" + i;
-//         $(currentSelector)[0].textContent = futureWeather.date;
-//         currentSelector = "#img-" + i;
-//         $(currentSelector)[0].src = futureWeather.icon;
-//         currentSelector = "#temp-" + i;
-//         $(currentSelector)[0].textContent = "Temp: " + futureWeather.temp + " \u2109";
-//         currentSelector = "#hum-" + i;
-//         $(currentSelector)[0].textContent = "Humidity: " + futureWeather.humidity + "%";
-//         currentSelector = "#wind-speed-" + i;
-//         $(currentSelector)[0].textContent = "Wind Speed: " + futureWeather.wind_speed + " mph";
-//     }
-// }
 
 // This function applies title case to a city name if there is more than one word.
 function titleCase(city) {
@@ -365,6 +346,7 @@ class UI {
                 categoriesList.forEach(category => {
                     const option = document.createElement('option');
                     option.value = category.id;
+                    option.classList = ("select")
                     option.appendChild(document.createTextNode(category.name));
                     categoriesSelect.appendChild(option);
                 })
@@ -384,19 +366,35 @@ const ui = new UI();
 document.getElementById('submitBtn').addEventListener('click', (e) => {
     e.preventDefault();
 
-    const eventName = document.getElementById('event-name').value;
-    const catergory = document.getElementById('category').value;
+    var cityName = eventNameEl.value.trim();
+    console.log(cityName);
+    getEvents(cityName);
 
-    console.log(eventName + ' : ' + catergory);
-
-    if (eventName !== '') {
-        console.log('Successful')
-        eventbrite.queryAPI(eventName, catergory)
-
-    } else {
-        console.log('Failed')
-
-    }
 
 })
 
+//Ticketmaster API
+var tAPIkey = "SnAuTYCCxs9xAMuBUfB2VULqSI2Dk45D";
+
+
+
+
+
+// var getEvents = function (eventCityName) {
+
+
+//     $.ajax({
+//         type: "GET",
+//         url: ("https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=SnAuTYCCxs9xAMuBUfB2VULqSI2Dk45D?city=" + eventCityName),
+//         async: true,
+//         dataType: "json",
+//         success: function (json) {
+//             console.log(json);
+//             // Parse the response.
+//             // Do other things.
+//         },
+//         error: function (xhr, status, err) {
+//             // This time, we do not end up here!
+//         }
+//     });
+// };
