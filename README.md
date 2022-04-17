@@ -22,7 +22,8 @@ https://mhiss11.github.io/Project-1-/
 
 
 # Screenshot
-![Site Screenshot](https://user-images.githubusercontent.com/63832314/163482009-eab72e5e-995c-4a5f-8ad9-b507b26a99bc.png)
+
+![Site Screenshot](https://user-images.githubusercontent.com/63832314/163726114-3e682c19-9d16-4d2f-9e3d-3fce4b112c53.png)
 
 
 
