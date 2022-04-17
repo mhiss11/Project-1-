@@ -1,12 +1,10 @@
+/*General Stlying*/
 body {
-  /* max-width: 600px;
-  max-height: 600px; */
   font-family: sans-serif;
   font-size: 12px;
-  line-height: 1;
   margin: 10px;
+  line-height: 0.5rem;
 }
-
 
 textarea {
   background: transparent;
@@ -27,7 +25,15 @@ h2 {
   padding: 5px;
 }
 
+ul {
+  display: flex;
+  list-style: none;
+}
 
+
+.title {
+  padding: 5px 15px 5px 15px;
+}
 
 .jumbotron {
 
@@ -41,6 +47,46 @@ h2 {
   padding-top: 20px;
 }
 
+.card-header,
+.card-body {
+  text-align: center;
+}
+
+.card-header {
+  background-color: rgb(153, 211, 235);
+  color: black;
+}
+
+.card-body {
+  background-color: rgb(132, 159, 168);
+}
+
+.card-content {
+  padding: 5px;
+}
+
+.container {
+  margin: 0 auto 0 auto;
+
+}
+
+.column {
+  display: flex;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+
+/*Planner Stlying*/
 .description {
   white-space: pre-wrap;
 }
@@ -78,8 +124,6 @@ h2 {
 }
 
 .saveBtn {
-  max-width: 600px;
-  max-height: 600px;
   border-left: 1px solid black;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -92,24 +136,7 @@ h2 {
   transition: all .3s ease-in-out;
 }
 
-.container {
-  margin: 0 auto 0 auto;
-}
 
-
-
-
-
-.flex {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-
-}
 
 /* Weather Style */
 main {
@@ -162,7 +189,8 @@ section {
 
 .city-name {
   width: 70%;
-  margin: 0 auto 0 auto;
+  margin: auto;
+  padding: 5px;
 }
 
 .city-name-input {
@@ -192,10 +220,8 @@ section {
 
 .current-info {
   font-size: medium;
-  padding: 2px;
+  padding: 5px;
 }
-
-
 
 .name-block,
 .uv-index-block {
@@ -217,25 +243,6 @@ section {
   border-radius: 10px;
 }
 
-.card-header,
-.card-body {
-  text-align: center;
-}
-
-.card-header {
-  background-color: rgb(153, 211, 235);
-  color: black;
-}
-
-.card-body {
-  background-color: rgb(132, 159, 168);
-}
-
-.card-content {
-  padding: 5px;
-}
-
-
 .favorable {
   background-color: green;
   color: white;
@@ -251,32 +258,15 @@ section {
   color: white;
 }
 
-
+/*Events Styling */
 .events-container {
   padding: 10px;
 }
 
-/* Viewports Styling*/
+.panel-body {
+  line-height: 0.25rem;
+}
 
-@media screen and (max-width: 575px) {
-  .search-panel {
-    width: 40%;
-  }
-
-  .search-button-panel {
-    margin-left: 0px;
-  }
-
-  .search-panel h3 {
-    font-size: 15px;
-  }
-
-  .form-row {
-    display: block;
-    text-align: center;
-  }
-
-  .results-panel {
-    width: 60%;
-  }
+.panel-heading {
+  line-height: 0.25rem;
 }

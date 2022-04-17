@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
@@ -21,7 +20,6 @@
         <p id="currentDay" class="title is-4"></p>
     </header>
     <div class="container">
-        <!--prev class container-->
         <!-- Timeblocks go here -->
     </div>
 
@@ -30,8 +28,8 @@
     <!--Weather Dashboard-->
     <div class="weather-event-wrapper flex">
         <div>
-            <div class="flex">
-                <section class="search-panel card flex">
+            <div>
+                <section class="search-panel card ">
                     <div class="search-box ">
                         <h3 class="search-header title is-3 card-content">Search Weather for a City</h3>
                         <form>
@@ -60,7 +58,7 @@
             </section>
 
 
-
+            <!--Current Weather Display-->
             <section class="results-panel is-hidden">
                 <div class="current-conditions-panel">
                     <div class="name-block current-info">
@@ -84,24 +82,18 @@
             </section>
         </div>
 
-        <!--Events Section-->
+        <!--Events Search Box-->
         <section class="col-6">
-            <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
-                <a class="navbar-brand" href="#">Search Events</a>
-            </nav> -->
+
             <div class="events-container search-wrapper">
                 <div id="search-events" class="card card-body">
-                    <h2 class="text-center title is-3">Search for Events by Name or City</h1>
+                    <h2 class="text-center title is-3">Search for Events by City</h1>
 
                         <div class="field card-content">
-                            <label for="event-name" class="label">Search by Name or City</label>
+
                             <input type="text" id="event-name" class="control input" placeholder="City Name">
                         </div>
 
-                        <!-- <div class="field card-content">
-                            <label for="category" class="label">Category</label>
-                            <select class="control" id="category"></select>
-                        </div> -->
 
                         <div class="field card-content">
                             <input type="submit" class="control button is-success" id="submitBtn" value="Search">
@@ -113,55 +105,52 @@
 
 
 
-            <style>
-                footer {
-                    color: white;
-                }
-            </style>
+
         </section>
 
     </div>
     </div>
-    <!--Ticketmaster Events-->
+    <!--Ticketmaster Events Display-->
     <div class="events-container">
         <div class="row">
             <div class="col-xs-6">
                 <div id='events-panel' class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Events</h3>
+
+                        <ul class="pager">
+                            <li>
+                                <h3 class="panel-title title is-2">Events</h3>
+                            </li>
+                            <li id="prev" class="previous pagination-previous"><a><span
+                                        aria-hidden="true">&larr;</span></a>
+                            </li>
+                            <li id="next" class="next pagination-next"><a><span aria-hidden="true">&rarr;</span></a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="panel-body">
                         <div id="events" class="list-group">
-                            <a href="#" class="list-group-item">
-                                <h4 class="list-group-item-heading"></h4>
-                                <p class="list-group-item-text"></p>
-                                <p class="venue"></p>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <h4 class="list-group-item-heading"></h4>
-                                <p class="list-group-item-text"></p>
-                                <p class="venue"></p>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <h4 class="list-group-item-heading"></h4>
-                                <p class="list-group-item-text"></p>
-                                <p class="venue"></p>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <h4 class="list-group-item-heading"></h4>
-                                <p class="list-group-item-text"></p>
-                                <p class="venue"></p>
-                            </a>
+                            <div class="list-group-item">
+                                <h4 class="list-group-item-heading title is-3"></h4>
+                                <p class="list-group-item-text subtitle"></p>
+                                <p class="venue subtitle"></p>
+                            </div>
+                            <div class="list-group-item">
+                                <h4 class="list-group-item-heading title is-3"></h4>
+                                <p class="list-group-item-text subtitle"></p>
+                                <p class="venue subtitle"></p>
+                            </div>
+                            <div class="list-group-item">
+                                <h4 class="list-group-item-heading title is-3"></h4>
+                                <p class="list-group-item-text subtitle"></p>
+                                <p class="venue subtitle"></p>
+                            </div>
+                            <div class="list-group-item">
+                                <h4 class="list-group-item-heading title is-3"></h4>
+                                <p class="list-group-item-text subtitle"></p>
+                                <p class="venue subtitle"></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="panel-footer">
-                        <nav>
-                            <ul class="pager">
-                                <li id="prev" class="previous"><a href="#"><span aria-hidden="true">&larr;</span></a>
-                                </li>
-                                <li id="next" class="next"><a href="#"><span aria-hidden="true">&rarr;</span></a></li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
 
@@ -169,19 +158,16 @@
 
             </div>
         </div>
-        <!--Ticketmaster Events-->
+        <!--End Ticketmaster Events-->
 
 
 
-
+        <!--Script Links-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script src="./assets/js/script.js"></script>

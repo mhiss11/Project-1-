@@ -78,20 +78,20 @@ function TimeBlocks() {
 
 
         if (hourBlock < currentTime) {
-            newHtml = newHtml + '<textarea class="column is-four-fifths description past" id="text' +
+            newHtml = newHtml + '<textarea class="column is-half description past" id="text' +
                 hourMap[hourBlock] + '"></textarea> ';
         }
         else if (hourBlock === currentTime) {
-            newHtml = newHtml + '<textarea class="column is-four-fifths description present" id="text' +
+            newHtml = newHtml + '<textarea class="column is-half description present" id="text' +
                 hourMap[hourBlock] + '"></textarea> ';
         }
         else {
-            newHtml = newHtml + '<textarea class="column is-four-fifths description future" id="text' +
+            newHtml = newHtml + '<textarea class="column is-half description future" id="text' +
                 hourMap[hourBlock] + '"></textarea> ';
         };
 
 
-        newHtml = newHtml + '<button class="button saveBtn column is-one-fifth" value="' + hourMap[hourBlock] + '">' +
+        newHtml = newHtml + '<button class="button saveBtn column is-1" value="' + hourMap[hourBlock] + '">' +
             '<i class="fas fa-save"></i></button> ' +
             '</div>';
 
@@ -100,8 +100,7 @@ function TimeBlocks() {
     }
 }
 
-//localStorage.setItem(timeEntryName, JSON.stringify(timeEntry));
-
+//Function to save the text in the planner areas
 function saveClick() {
     var hourBlock = $(this).val();
     var entryFound = false;
@@ -168,6 +167,7 @@ function saveClick() {
     localStorage.setItem(timeEntryName, JSON.stringify(timeEntry));
 }
 
+//Displays timeblocks
 function getTimeEntry() {
     var teList = JSON.parse(localStorage.getItem(timeEntryName));
 
@@ -184,11 +184,7 @@ function getTimeEntry() {
 }
 
 // WEATHER JS   //
-
-
-
-//localStorage.clear();
-
+//Finds the coordinates of the searched city
 function findCity() {
     var cityName = titleCase($("#cityName")[0].value.trim());
 
@@ -224,7 +220,7 @@ function findCity() {
     })
 }
 
-
+//Fetches weather data from searched city
 function getListCity(coordinates) {
     apiURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=minutely,hourly&units=imperial&appid=71311474f5b26fb7bbfa0bc1985b90cd";
 
@@ -237,6 +233,7 @@ function getListCity(coordinates) {
     })
 }
 
+//Displays the current weather in the results panel
 function getCurrentWeather(data) {
     $(".results-panel").removeClass("is-hidden");
 
@@ -280,6 +277,7 @@ function convertUnixTime(data, index) {
     return (dateObject.toLocaleDateString());
 }
 
+//Event listener for click of weather search button
 $("#search-button").on("click", function (e) {
     e.preventDefault();
 
@@ -291,6 +289,7 @@ $("#search-button").on("click", function (e) {
 
 })
 
+//Event listener for clicking of previously searched city
 $(".city-list-box").on("click", ".city-name", function () {
 
     var coordinates = (localStorage.getItem($(this)[0].textContent)).split(" ");
@@ -331,6 +330,7 @@ class EventBrite {
 
 
 }
+//Constructs list of categories for events
 class UI {
     constructor() {
         this.init();
@@ -365,7 +365,7 @@ class UI {
 const eventbrite = new EventBrite();
 const ui = new UI();
 
-
+//Event listener for event search button
 document.getElementById('submitBtn').addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -379,6 +379,7 @@ document.getElementById('submitBtn').addEventListener('click', (e) => {
 //Ticketmaster js 
 var page = 0;
 
+//Fetches events from ticketmaster API
 function getEvents(page) {
     $("#events-panel").show();
     $("#attraction-panel").hide();
@@ -411,6 +412,7 @@ function getEvents(page) {
     });
 }
 
+//Displays events in the events panel
 function showEvents(json) {
     var items = $("#events .list-group-item");
     items.hide();
@@ -419,6 +421,7 @@ function showEvents(json) {
     for (var i = 0; i < events.length; i++) {
         item.children('.list-group-item-heading').text(events[i].name);
         item.children('.list-group-item-text').text(events[i].dates.start.localDate);
+
         try {
             item.children(".venue").text(events[i]._embedded.venues[0].name + " in " + events[i]._embedded.venues[0].city.name);
         } catch (err) {
@@ -438,6 +441,7 @@ function showEvents(json) {
     }
 }
 
+//Previous and next events buttons
 $("#prev").click(function () {
     getEvents(--page);
 });
@@ -446,6 +450,7 @@ $("#next").click(function () {
     getEvents(++page);
 });
 
+//Gets attractions from ticketmaster
 function getAttraction(id) {
     $.ajax({
         type: "GET",
