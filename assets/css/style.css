@@ -23,6 +23,12 @@ input {
   outline: none;
 }
 
+h2 {
+  padding: 5px;
+}
+
+
+
 .jumbotron {
 
   text-align: center;
@@ -159,9 +165,8 @@ section {
   margin: 0 auto 0 auto;
 }
 
-.city-input {
-  width: 60%;
-
+.city-name-input {
+  margin: 5px;
 }
 
 .city-list-box {
@@ -171,7 +176,7 @@ section {
 .results-panel {
   width: 75%;
   padding-bottom: 10px;
-  visibility: hidden;
+
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -184,6 +189,13 @@ section {
   margin-left: 50px;
   width: auto;
 }
+
+.current-info {
+  font-size: medium;
+  padding: 2px;
+}
+
+
 
 .name-block,
 .uv-index-block {
@@ -219,6 +231,9 @@ section {
   background-color: rgb(132, 159, 168);
 }
 
+.card-content {
+  padding: 5px;
+}
 
 
 .favorable {
@@ -236,6 +251,10 @@ section {
   color: white;
 }
 
+
+.events-container {
+  padding: 10px;
+}
 
 /* Viewports Styling*/
 
